@@ -12,3 +12,4 @@ class AdminContact(admin.ModelAdmin):
 
 admin.site.register(Portfolio, AdminPortfolio)
 admin.site.register(Contact, AdminContact)
+admin.site.register(Image)

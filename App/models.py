@@ -16,3 +16,12 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+class Image(models.Model):
+    name = models.CharField(max_length=200, null=True)
+    image1 = models.ImageField(upload_to='about/',blank=False)
+    image2 = models.ImageField(upload_to='about/',blank=False)
+    image3 = models.ImageField(upload_to='about/',blank=False)
+
+    def __str__(self):
+        return self.name

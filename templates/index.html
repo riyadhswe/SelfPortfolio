@@ -17,7 +17,7 @@
         <header class="l-header">
             <nav class="nav bd-grid">
                 <div>
-                    <a href="#" class="nav__logo">{{ p.0.name }}</a>
+                    <a href="#" class="nav__logo">{{ p.name }}</a>
                 </div>
 
                 <div class="nav__menu" id="nav-menu">
@@ -40,7 +40,7 @@
             <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title">Hi, I'am<br> <span class="home__title-color">{{ p.0.name }}</span><br> {{ p.0.title }}</h1>
+                    <h1 class="home__title">Hi, I'am<br> <span class="home__title-color">{{ p.name }} </span><br> {{ p.0.title }}</h1>
 
                     <a href="#contact" class="button">Contact</a>
                     <a href="#contact" class="button">Download CV</a>
@@ -72,12 +72,12 @@
 
                 <div class="about__container bd-grid">
                     <div class="about__img">
-                        <img src="{% static 'assets/img/about.jpg' %}" alt="">
+                        <img src="{{ i.image1.url }}" alt="">
                     </div>
                     
                     <div>
-                        <h2 class="about__subtitle">I'am {{ p.0.name }}</h2>
-                        <p class="about__text" align="justify">{{ p.0.description }}</p>
+                        <h2 class="about__subtitle">I'am {{ p.name }}</h2>
+                        <p class="about__text" align="justify">{{ p.description }}</p>
                     </div>                                   
                 </div>
             </section>
@@ -197,7 +197,7 @@
 
         <!--===== FOOTER =====-->
         <footer class="footer">
-            <p class="footer__title">{{ p.0.name }}</p>
+            <p class="footer__title">{{ p.name }}</p>
             <div class="footer__social">
                 <a href="https://www.facebook.com/riyadhswe/" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
                 <a href="https://www.linkedin.com/in/riyadhswe/" class="footer__icon"><i class='bx bxl-linkedin' ></i></a>
