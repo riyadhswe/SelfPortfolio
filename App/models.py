@@ -57,6 +57,7 @@ class Social(models.Model):
     link2 = models.URLField(max_length=128,blank=True,verbose_name='Facebook')
     link3 = models.URLField(max_length=128,blank=True,verbose_name='Github')
     link4 = models.EmailField(max_length=128,blank=True,verbose_name='Google')
+    link5 = models.URLField(max_length=200,blank=True,verbose_name='Phone')
 
 class footer(models.Model):
     footer = models.CharField(max_length=200,verbose_name='Footer')
