@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -42,8 +43,8 @@
                 <div class="home__data">
                     <h1 class="home__title">Hi, I'am<br> <span class="home__title-color">{{ p.name }} </span><br> {{ p.0.title }}</h1>
 
-                    <a href="#contact" class="button">Contact</a>
-                    <a href="#contact" class="button">Download CV</a>
+                    <a href="#contact" class="button" >Contact</a>
+                    <a href="{{ pdf.0.pdf.url }}" class="button" download="" >Download CV</a>
                 </div>
 
                 <div class="home__social">
@@ -60,7 +61,7 @@
                         </mask>
                         <g mask="url(#mask0)">
                             <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                            <image class="home__blob-img" x="50" y="60" href="{% static 'assets/img/perfil.png ' %}"/>
+                            <image class="home__blob-img" x="50" y="60" href="{{ i.0.image1.url }} "/>
                         </g>
                     </svg>
                 </div>
@@ -72,7 +73,7 @@
 
                 <div class="about__container bd-grid">
                     <div class="about__img">
-                        <img src="{{ i.image1.url }}" alt="">
+                        <img src="{{ i.0.image2.url }}" alt="">
                     </div>
                     
                     <div>
@@ -91,7 +92,7 @@
                         <h2 class="skills__subtitle">Profesional Skills</h2>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <span class="skills__name">PHOTOSHOP</span>
+                                <span class="skills__name">{{ Skills.Skill1 }}</span>
                             </div>
                             <div class="skills__bar skills__html">
 
@@ -102,7 +103,7 @@
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <span class="skills__name">PYTHON</span>
+                                <span class="skills__name">{{ Skills.Skill2 }}</span>
                             </div>
                             <div class="skills__bar skills__css">
                                 
@@ -113,7 +114,7 @@
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <span class="skills__name">DJANGO</span>
+                                <span class="skills__name">{{ Skills.Skill3 }}</span>
                             </div>
                             <div class="skills__bar skills__js">
                                 
@@ -124,7 +125,7 @@
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <span class="skills__name">MICROSOFT OFFICE</span>
+                                <span class="skills__name">{{ Skills.Skill4 }}</span>
                             </div>
                             <div class="skills__bar skills__ux">
                                 
@@ -135,7 +136,7 @@
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <span class="skills__name">SQL</span>
+                                <span class="skills__name">{{ Skills.Skill5 }}</span>
                             </div>
                             <div class="skills__bar skills__js">
 
@@ -148,7 +149,7 @@
                     </div>
                     
                     <div>              
-                        <img src="{% static 'assets/img/work3.jpg ' %}" alt="" class="skills__img">
+                        <img src="{{ i.0.image3.url }}" alt="" class="skills__img">
                     </div>
                 </div>
             </section>
@@ -158,25 +159,13 @@
                 <h2 class="section-title">Work</h2>
 
                 <div class="work__container bd-grid">
-                    <a href="" class="work__img">
-                        <img src="{% static 'assets/img/work1.jpg ' %}" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="{% static 'assets/img/work2.jpg ' %}" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="{% static 'assets/img/work3.jpg ' %}" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="{% static 'assets/img/work4.jpg ' %}" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="{% static 'assets/img/work5.jpg ' %}" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="{% static 'assets/img/work6.jpg ' %}" alt="">
-                    </a>
+                    {% for workdata in work %}
+                        <a href="{{ workdata.link }}" class="work__img" >
+                        <img src="{{ workdata.image1.url }}">
+                        </a>
+                    {% endfor %}
                 </div>
+
             </section>
 
             <!--===== CONTACT =====-->
@@ -188,7 +177,7 @@
                            {% csrf_token %}
                         <input type="text" name="name"  placeholder="Name"  class="contact__input">
                         <input type="mail"name="email" placeholder="Email"  class="contact__input">
-                        <textarea  name="description" placeholder="Massage"  cols="0" rows="10" class="contact__input"></textarea>
+                        <textarea  name="description"   cols="0" rows="10" class="contact__input"></textarea>
                         <input type="submit" value="Send" class="contact__button button">
                     </form>
                 </div>
