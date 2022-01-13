@@ -18,7 +18,7 @@
         <header class="l-header">
             <nav class="nav bd-grid">
                 <div>
-                    <a href="#" class="nav__logo">{{ p.name }}</a>
+                    <a href="#" class="nav__logo">{{ p.0.name }}</a>
                 </div>
 
                 <div class="nav__menu" id="nav-menu">
@@ -41,17 +41,17 @@
             <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title">Hi, I'am<br> <span class="home__title-color">{{ p.name }} </span><br> {{ p.0.title }}</h1>
+                    <h1 class="home__title">Hi, I'am<br> <span class="home__title-color">{{ p.0.name }} </span><br> {{ p.0.title }}</h1>
 
                     <a href="#contact" class="button" >Contact</a>
                     <a href="{{ pdf.0.pdf.url }}" class="button" download="" >Download CV</a>
                 </div>
 
                 <div class="home__social">
-                    <a href="https://www.linkedin.com/in/riyadhswe/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://www.facebook.com/riyadhswe/" class="home__social-icon"><i class='bx bxl-facebook' ></i></a>
-                    <a href="https://github.com/riyadhswe" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                    <a href="mailto:riyadhswe@gmail.com" class="home__social-icon"><i class='bx bxl-google' ></i></a>
+                    <a href="{{ social.0.link1}}" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="{{ social.0.link2}}" class="home__social-icon"><i class='bx bxl-facebook' ></i></a>
+                    <a href="{{ social.0.link3}}" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                    <a href="mailto:{{ social.0.link4}}" class="home__social-icon"><i class='bx bxl-google' ></i></a>
                 </div>
 
                 <div class="home__img">
@@ -77,8 +77,8 @@
                     </div>
                     
                     <div>
-                        <h2 class="about__subtitle">I'am {{ p.name }}</h2>
-                        <p class="about__text" align="justify">{{ p.description }}</p>
+                        <h2 class="about__subtitle">I'am {{ p.0.name }}</h2>
+                        <p class="about__text" align="justify">{{ p.0.description }}</p>
                     </div>                                   
                 </div>
             </section>
@@ -92,7 +92,7 @@
                         <h2 class="skills__subtitle">Profesional Skills</h2>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <span class="skills__name">{{ Skills.Skill1 }}</span>
+                                <span class="skills__name">{{ Skills.0.Skill1 }}</span>
                             </div>
                             <div class="skills__bar skills__html">
 
@@ -103,7 +103,7 @@
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <span class="skills__name">{{ Skills.Skill2 }}</span>
+                                <span class="skills__name">{{ Skills.0.Skill2 }}</span>
                             </div>
                             <div class="skills__bar skills__css">
                                 
@@ -114,7 +114,7 @@
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <span class="skills__name">{{ Skills.Skill3 }}</span>
+                                <span class="skills__name">{{ Skills.0.Skill3 }}</span>
                             </div>
                             <div class="skills__bar skills__js">
                                 
@@ -125,7 +125,7 @@
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <span class="skills__name">{{ Skills.Skill4 }}</span>
+                                <span class="skills__name">{{ Skills.0.Skill4 }}</span>
                             </div>
                             <div class="skills__bar skills__ux">
                                 
@@ -136,7 +136,7 @@
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <span class="skills__name">{{ Skills.Skill5 }}</span>
+                                <span class="skills__name">{{ Skills.0.Skill5 }}</span>
                             </div>
                             <div class="skills__bar skills__js">
 
@@ -186,12 +186,12 @@
 
         <!--===== FOOTER =====-->
         <footer class="footer">
-            <p class="footer__title">{{ p.name }}</p>
+            <p class="footer__title">{{ p.0.name }}</p>
             <div class="footer__social">
-                <a href="https://www.facebook.com/riyadhswe/" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-                <a href="https://www.linkedin.com/in/riyadhswe/" class="footer__icon"><i class='bx bxl-linkedin' ></i></a>
-                <a href="https://github.com/riyadhswe" class="footer__icon"><i class='bx bxl-github' ></i></a>
-                <a href="mailto:riyadhswe@gmail.com" class="footer__icon"><i class='bx bxl-google' ></i></a>
+                <a href="{{ social.0.link2}}" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="{{ social.0.link1}}" class="footer__icon"><i class='bx bxl-linkedin' ></i></a>
+                <a href="{{ social.0.link3}}" class="footer__icon"><i class='bx bxl-github' ></i></a>
+                <a href="mailto:{{ social.0.link4}}" class="footer__icon"><i class='bx bxl-google' ></i></a>
             </div>
             <p class="footer__copy">&#169; riyadhswe </p>
         </footer>

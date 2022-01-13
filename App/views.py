@@ -4,17 +4,19 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    portfoliodata = Portfolio.objects.all()[0]
+    portfoliodata = Portfolio.objects.all()
     imagedata = Image.objects.all()
     pdfdata = Pdf.objects.all()
     workdata = Work.objects.all()
-    skilldata = Skills.objects.all()[0]
+    skilldata = Skills.objects.all()
+    socialdata = Social.objects.all()
     contex = {
         'p': portfoliodata,
         'i': imagedata,
         'pdf': pdfdata,
         'work': workdata,
         'Skills': skilldata,
+        'social': socialdata,
     }
 
     if request.method == 'POST':  # For Insert Data

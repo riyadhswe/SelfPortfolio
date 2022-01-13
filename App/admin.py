@@ -23,9 +23,12 @@ class AdminSkill(admin.ModelAdmin):
     list_display = ['Skill1', 'Skill2', 'Skill3', 'Skill4', 'Skill5']
 
 
+
+
 admin.site.register(Portfolio, AdminPortfolio)
 admin.site.register(Contact, AdminContact)
 admin.site.register(Image, AdminImage)
 admin.site.register(Pdf, AdminPdf)
 admin.site.register(Work)
 admin.site.register(Skills,AdminSkill)
+admin.site.register(Social)
