@@ -10,6 +10,7 @@ def index(request):
     workdata = Work.objects.all()
     skilldata = Skills.objects.all()
     socialdata = Social.objects.all()
+    footerdata = footer.objects.all()
     contex = {
         'p': portfoliodata,
         'i': imagedata,
@@ -17,6 +18,7 @@ def index(request):
         'work': workdata,
         'Skills': skilldata,
         'social': socialdata,
+        'footer': footerdata,
     }
 
     if request.method == 'POST':  # For Insert Data

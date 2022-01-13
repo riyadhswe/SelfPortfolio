@@ -57,3 +57,9 @@ class Social(models.Model):
     link3 = models.URLField(max_length=128,blank=True,verbose_name='Github')
     link4 = models.EmailField(max_length=128,blank=True,verbose_name='Google')
 
+class footer(models.Model):
+    footer = models.CharField(max_length=200,verbose_name='Footer')
+
+    def __str__(self):
+        return self.footer
+
