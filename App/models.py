@@ -55,5 +55,5 @@ class Social(models.Model):
     link1 = models.URLField(max_length=128,blank=True,verbose_name='Linkedin')
     link2 = models.URLField(max_length=128,blank=True,verbose_name='Facebook')
     link3 = models.URLField(max_length=128,blank=True,verbose_name='Github')
-    link4 = models.URLField(max_length=128,blank=True,verbose_name='Google')
+    link4 = models.EmailField(max_length=128,blank=True,verbose_name='Google')
 
