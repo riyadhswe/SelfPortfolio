@@ -1,1 +1,0 @@
-web: gunicorn SelfPortfolio.wsgi
